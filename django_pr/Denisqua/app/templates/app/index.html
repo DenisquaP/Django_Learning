@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link type="text/css" href="{% 'app/styles.css' %}" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+</head>
+<body>
+    <a href="{% url 'new_friend' %}" class="button">Добавить нового друга</a>
+    <ul>
+        {% for guy in info %}
+        <li>
+            <h1> {{ guy.name }} </h1>
+            <p> {{ guy.status }} </p>
+            <hr>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
