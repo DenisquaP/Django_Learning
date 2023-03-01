@@ -1,6 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponseNotFound
-from . import models
+from app import models
+from app import forms
 
 
 def index(request):
@@ -13,7 +14,15 @@ def index(request):
 
 
 def new_friend(request):
-    return render(request, 'app/new_friend.html')
+    if request.POST:
+        form = forms.AddFriend(request.POST)
+        if form.is_valid():
+            form.save()
+            # models.AppModel.objects.create(**form.changed_data)
+            return redirect('home')
+    else:
+        form = forms.AddFriend()
+    return render(request, 'app/new_friend.html', {'form': form})
 
 
 def chosed_friend(request, friend_name):

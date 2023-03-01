@@ -1,4 +1,4 @@
-a.button {
+.button {
     background-color: #232323;
     border: none;
     color: white;
@@ -7,4 +7,15 @@ a.button {
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
+};
+
+.blocktext {
+    margin-left: auto;
+    margin-right: auto;
+    width: 6em
+};
+
+.outer {
+    text-align: center;
+    border: 1px solid blue;
 }

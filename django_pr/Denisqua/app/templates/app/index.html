@@ -1,6 +1,5 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
 <head>
     <link type="text/css" href="{% static 'app/styles.css' %}" rel="stylesheet" />
     <meta charset="UTF-8">
@@ -13,7 +12,8 @@
     <ul>
         {% for guy in info %}
         <li>
-            <h1><a href="{% url 'chosed' guy.name %}"> {{ guy.name }} </a></h1>
+
+            <h1><a href="{{ guy.get_absolute_url }}"> {{ guy.name }} </a></h1>
             <p> {{ guy.status }} </p>
             <hr>
         </li>

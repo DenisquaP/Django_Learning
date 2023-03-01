@@ -4,7 +4,7 @@ from django.urls import reverse
 
 class AppModel(models.Model):
     name = models.CharField(max_length=128, verbose_name='Имя')
-    status = models.CharField(max_length=128, verbose_name='Хто')
+    status = models.CharField(max_length=128, verbose_name='Статус')
     age = models.IntegerField(verbose_name='Возраст')
 
     def get_absolute_url(self):

@@ -1,12 +1,18 @@
+{% load static %}
 <!DOCTYPE html>
-<html lang="en">
 <head>
+    <link type="text/css" href="{% static 'app/styles.css' %}" rel="stylesheet" />
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Новый друг</title>
+    <title>Добавить друга</title>
 </head>
 <body>
-    <h1>Старый друг лучше новых двух</h1>
+    <h1 style="text-align: center;">Старый друг лучше новых двух</h1>
+    <form action="{% url 'new_friend' %}" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Добавить</button>
+    </form>
 </body>
 </html>
